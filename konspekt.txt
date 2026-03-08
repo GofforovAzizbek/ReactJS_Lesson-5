@@ -1,0 +1,79 @@
+1. Virtual DOM nima?
+
+Virtual DOM — bu haqiqiy DOM ning virtual (xotirada saqlanadigan) nusxasi hisoblanadi.
+U JavaScript obyektlari ko‘rinishida bo‘ladi.
+
+Oddiy DOM bilan ishlaganda sahifadagi har bir o‘zgarish brauzerga og‘irlik qiladi.
+Virtual DOM esa avval xotirada o‘zgarishni hisoblaydi, keyin faqat kerakli joyni yangilaydi.
+
+Shuning uchun React kabi kutubxonalar tez ishlaydi.
+
+Misol:
+
+Agar sahifada 100 ta element bo‘lsa va 1 tasi o‘zgarsa:
+
+Oddiy DOM:
+Brauzer ko‘pincha ko‘p elementni qayta hisoblaydi.
+
+Virtual DOM:
+Faqat o‘zgargan element yangilanadi.
+
+Natija:
+Tezroq ishlash va kamroq resurs sarfi.
+
+---
+
+2. Diffing Algorithm nima?
+
+Diffing Algorithm — bu eski Virtual DOM bilan yangi Virtual DOM ni solishtiradigan algoritm.
+
+U quyidagi ishni qiladi:
+
+1. Eski Virtual DOM ni oladi
+2. Yangi Virtual DOM ni yaratadi
+3. Ikkalasini solishtiradi
+4. Qaysi joy o‘zgarganini aniqlaydi
+5. Faqat o‘sha joyni haqiqiy DOM da yangilaydi
+
+Bu jarayon React da "reconciliation" deb ham ataladi.
+
+---
+
+3. Diffing Algorithm qanday ishlaydi?
+
+Asosiy qoidalar:
+
+1. Agar element turi o‘zgarsa → element butunlay yangilanadi.
+
+Misol:
+div → span
+
+2. Agar element turi bir xil bo‘lsa → faqat atributlar yangilanadi.
+
+Misol:
+class yoki style o‘zgarsa.
+
+3. List elementlarda React "key" atributi orqali qaysi element o‘zgarganini aniqlaydi.
+
+Misol:
+
+<li key="1">Apple</li>
+<li key="2">Banana</li>
+
+---
+
+4. Virtual DOM afzalliklari
+
+* Tez ishlaydi
+* Kamroq DOM o‘zgarishi
+* Brauzerga kamroq yuklama
+* UI yangilanishi samarali bo‘ladi
+
+---
+
+Xulosa
+
+Virtual DOM — DOM ning virtual nusxasi.
+Diffing Algorithm — eski va yangi Virtual DOM ni solishtirib, faqat kerakli joyni yangilaydi.
+
+Shu sababli React kabi frameworklar yuqori tezlikda ishlaydi.
